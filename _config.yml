@@ -1,7 +1,7 @@
 # Site settings
 title: iHuajiu's timeline
 email: Joeychou180@163.com
-description: >程序员，嵌入式软件开发者，前端技术学习者，积极心理学爱好者，健身爱好者.
+description: 程序员，嵌入式软件开发者，前端技术学习者，积极心理学爱好者，健身爱好者.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "ihuajiu.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
