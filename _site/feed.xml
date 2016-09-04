@@ -5,35 +5,33 @@
     <description>嵌入式程序员、健身爱好者、哈佛幸福课实践者</description>
     <link>http://ihuajiu.github.io/</link>
     <atom:link href="http://ihuajiu.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Sep 2016 20:15:29 +0800</pubDate>
-    <lastBuildDate>Sun, 04 Sep 2016 20:15:29 +0800</lastBuildDate>
+    <pubDate>Sun, 04 Sep 2016 21:40:09 +0800</pubDate>
+    <lastBuildDate>Sun, 04 Sep 2016 21:40:09 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>怎么看原理图[2]UART</title>
+        <description>&lt;h2 id=&quot;uart&quot;&gt;UART&lt;/h2&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h3 id=&quot;uart-1&quot;&gt;UART时序&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/uart.png&quot; alt=&quot;UART时序图&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;空闲状态：TXD\RXD与GND之间的电平为高电平；&lt;/li&gt;
+  &lt;li&gt;发送时序：当一端的TXD开始传送数据时，首先将电平拉低，并保持一个时间T，即发送起始位，然后数据按照从低位到高位依次发送，数据发送完毕后，如果有校验位，则发送校验位，然后发送停止位（停止位为高电平），一帧数据发送完毕；&lt;/li&gt;
+  &lt;li&gt;接收时序：另一端的RXD检测到一个从高电平到低电平的下降沿，即判断出对方要开始发送数据，根据约定的波特率从低位到高位依次接收，如果有校验位，则判断校验，最后接收停止位。每次bit位接收按照16倍波特率的时钟频率进行采样，每个bit位有16个时钟采样，取中间值，保证准确性。例如第一位数据的采集次数应为16+8，后面的采样次数应为16+8+16*(n-1)&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
+&lt;h3 id=&quot;uart-2&quot;&gt;UART工作线&lt;/h3&gt;
+&lt;p&gt;TXD、RXD、GND&lt;/p&gt;
 </description>
         <pubDate>Mon, 05 Sep 2016 02:15:33 +0800</pubDate>
-        <link>http://ihuajiu.github.io/jekyll/update/2016/09/05/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://ihuajiu.github.io/jekyll/update/2016/09/05/welcome-to-jekyll.html</guid>
+        <link>http://ihuajiu.github.io/base/diagram/2016/09/05/how-to-watch-diagram-2.html</link>
+        <guid isPermaLink="true">http://ihuajiu.github.io/base/diagram/2016/09/05/how-to-watch-diagram-2.html</guid>
         
         
-        <category>jekyll</category>
+        <category>base</category>
         
-        <category>update</category>
+        <category>diagram</category>
         
       </item>
     
@@ -249,41 +247,13 @@ N极在中间，低电平生效，PN结导通，高电平不导通；&lt;/li&gt;
 &lt;/table&gt;
 </description>
         <pubDate>Mon, 05 Sep 2016 02:15:33 +0800</pubDate>
-        <link>http://ihuajiu.github.io/jekyll/update/2016/09/05/how-to-watch-diagram-1.html</link>
-        <guid isPermaLink="true">http://ihuajiu.github.io/jekyll/update/2016/09/05/how-to-watch-diagram-1.html</guid>
+        <link>http://ihuajiu.github.io/base/diagram/2016/09/05/how-to-watch-diagram-1.html</link>
+        <guid isPermaLink="true">http://ihuajiu.github.io/base/diagram/2016/09/05/how-to-watch-diagram-1.html</guid>
         
         
-        <category>jekyll</category>
+        <category>base</category>
         
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 08 Aug 2016 03:59:18 +0800</pubDate>
-        <link>http://ihuajiu.github.io/jekyll/update/2016/08/08/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://ihuajiu.github.io/jekyll/update/2016/08/08/welcome-to-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>diagram</category>
         
       </item>
     

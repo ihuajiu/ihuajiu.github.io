@@ -2,7 +2,7 @@
 layout: post
 title:  "怎么看原理图[1]GPIO和门电路"
 date:   2016-09-04 18:15:33
-categories: jekyll update
+categories: base diagram
 ---
 ## GPIO和门电路
 
