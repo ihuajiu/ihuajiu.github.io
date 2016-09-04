@@ -4,20 +4,17 @@ email: JoeyChou180@163.com
 description: 嵌入式程序员、健身爱好者、哈佛幸福课实践者
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://ihuajiu.github.io" # the base hostname & protocol for your site
-twitter_username: jekyllrb
+twitter_username:
 github_username:  ihuajiu
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
 
+github: [metadata]
 kramdown:
-  input: GFM
-  extensions:
-    - autolink
-    - footnotes
-    - smart
-  use_coderay: true
-  syntax_highlighter: rouge
-  coderay:
-    coderay_line_numbers:  nil
+ input: GFM
+ hard_wrap: false
+gems:
+ - jekyll-coffeescript
+ - jekyll-paginate
